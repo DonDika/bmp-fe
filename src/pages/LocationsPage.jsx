@@ -22,7 +22,7 @@ const LocationsPage = () => {
 
   const fetchLocations = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/location/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/location/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

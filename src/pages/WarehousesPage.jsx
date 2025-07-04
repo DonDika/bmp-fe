@@ -23,7 +23,7 @@ const WarehousesPage = () => {
 
   const fetchWarehouse = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/warehouse/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/warehouse/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

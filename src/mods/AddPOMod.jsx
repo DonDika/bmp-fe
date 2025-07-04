@@ -35,7 +35,7 @@ const AddPOMod = ({ onClose, onPurchaseAdded }) => {
       try {
         setLoading(true);
         const [mrRes, userRes] = await Promise.all([
-          axios.get("${import.meta.env.VITE_API_URL}/material-request/all", {
+          axios.get(`${import.meta.env.VITE_API_URL}/material-request/all`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
           // axios.get("${import.meta.env.VITE_API_URL}/user/all", {
@@ -275,7 +275,7 @@ const AddPOMod = ({ onClose, onPurchaseAdded }) => {
 
     try {
       const response = await axios.post(
-        "${import.meta.env.VITE_API_URL}/purchase-order",
+        `${import.meta.env.VITE_API_URL}/purchase-order`,
         dataToSubmit,
         {
           headers: { Authorization: `Bearer ${token}` },

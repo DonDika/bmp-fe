@@ -20,7 +20,7 @@ const EditMPRMod = ({ purchase, onClose, onPurchaseUpdated }) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const itemsRes = await axios.get("${import.meta.env.VITE_API_URL}/item/all", {
+        const itemsRes = await axios.get(`${import.meta.env.VITE_API_URL}/item/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (itemsRes.data.success) setItemsData(itemsRes.data.data);

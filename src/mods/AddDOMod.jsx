@@ -28,7 +28,7 @@ const AddDOMod = ({ onClose, onDeliveryAdded }) => {
       try {
         setLoading(true);
         const [mrRes, userRes] = await Promise.all([
-          axios.get("${import.meta.env.VITE_API_URL}/material-request/all", {
+          axios.get(`${import.meta.env.VITE_API_URL}/material-request/all`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
           // axios.get("${import.meta.env.VITE_API_URL}/user/all", {
@@ -265,7 +265,7 @@ const AddDOMod = ({ onClose, onDeliveryAdded }) => {
 
     try {
       const response = await axios.post(
-        "${import.meta.env.VITE_API_URL}/delivery-order",
+        `${import.meta.env.VITE_API_URL}/delivery-order`,
         dataToSubmit,
         {
           headers: { Authorization: `Bearer ${token}` },

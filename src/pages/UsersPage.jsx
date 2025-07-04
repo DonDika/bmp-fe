@@ -23,7 +23,7 @@ const UsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/user/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/user/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

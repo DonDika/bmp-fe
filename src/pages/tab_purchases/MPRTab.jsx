@@ -24,7 +24,7 @@ const MPRTab = () => {
 
   const fetchPurchases = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/material-request/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/material-request/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

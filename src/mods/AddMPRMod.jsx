@@ -29,10 +29,10 @@ const AddMPRMod = ({ onClose, onPurchaseAdded }) => {
     const fetchData = async () => {
       try {
         const [itemsRes, locationsRes] = await Promise.all([
-          axios.get("${import.meta.env.VITE_API_URL}/item/all", {
+          axios.get(`${import.meta.env.VITE_API_URL}/item/all`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("${import.meta.env.VITE_API_URL}/location/all", {
+          axios.get(`${import.meta.env.VITE_API_URL}/location/all`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -119,7 +119,7 @@ const AddMPRMod = ({ onClose, onPurchaseAdded }) => {
 
     try {
       const response = await axios.post(
-        "${import.meta.env.VITE_API_URL}/material-request",
+        `${import.meta.env.VITE_API_URL}/material-request`,
         purchaseInfo,
         {
           headers: { Authorization: `Bearer ${token}` },

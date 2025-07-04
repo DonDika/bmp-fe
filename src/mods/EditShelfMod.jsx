@@ -24,8 +24,8 @@ const EditShelfMod = ({ shelf, warehouseId, onClose, onShelfUpdated }) => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const [warehouseRes, itemRes] = await Promise.all([
-          axios.get("${import.meta.env.VITE_API_URL}/warehouse/all", { headers }),
-          axios.get("${import.meta.env.VITE_API_URL}/item/all", { headers }),
+          axios.get(`${import.meta.env.VITE_API_URL}/warehouse/all`, { headers }),
+          axios.get(`${import.meta.env.VITE_API_URL}/item/all`, { headers }),
         ]);
 
         if (warehouseRes.data.success) {

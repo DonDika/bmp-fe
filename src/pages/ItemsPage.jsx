@@ -22,7 +22,7 @@ const ItemsPage = () => {
 
   const fetchItems = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/item/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/item/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

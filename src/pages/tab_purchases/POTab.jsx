@@ -25,7 +25,7 @@ const POTab = () => {
 
   const fetchPurchases = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/purchase-order/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/purchase-order/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

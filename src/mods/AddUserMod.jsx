@@ -38,7 +38,7 @@ const AddUserMod = ({ onClose, onUserAdded }) => {
       const token = Cookies.get("token");
 
       const response = await axios.post(
-        "${import.meta.env.VITE_API_URL}/user",
+        `${import.meta.env.VITE_API_URL}/user`,
         {
           email: userInfo.email,
           password: userInfo.password,

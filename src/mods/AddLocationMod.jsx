@@ -35,7 +35,7 @@ const AddLocationMod = ({ onClose, onLocationAdded }) => {
       const token = Cookies.get("token");
 
       const response = await axios.post(
-        "${import.meta.env.VITE_API_URL}/location",
+        `${import.meta.env.VITE_API_URL}/location`,
         {
           name: locationInfo.name,
           code: locationInfo.code,
