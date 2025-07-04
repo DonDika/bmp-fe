@@ -24,7 +24,7 @@ const MPRTab = () => {
 
   const fetchPurchases = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/material-request/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/material-request/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -63,7 +63,7 @@ const MPRTab = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/material-request/${purchase.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/material-request/${purchase.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

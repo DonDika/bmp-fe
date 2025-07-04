@@ -11,7 +11,7 @@ const ViewDOMod = ({ onClose, id, token }) => {
   try {
     console.log("getPDF dipanggil");
 
-    const res = await axios.get(`http://localhost:5001/api/download-pdf/material-request/${id}`, {
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/download-pdf/material-request/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -40,7 +40,7 @@ const ViewDOMod = ({ onClose, id, token }) => {
     const fetchMaterialRequest = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5001/api/material-request/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/material-request/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

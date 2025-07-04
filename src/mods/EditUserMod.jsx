@@ -45,7 +45,7 @@ const EditUserMod = ({ onClose, user, onUserUpdated }) => {
     try {
       const token = Cookies.get("token");
       const response = await axios.put(
-        `http://localhost:5001/api/user/${user.id}`,
+        `${import.meta.env.VITE_API_URL}/user/${user.id}`,
         {
           email: userInfo.email,
           password: userInfo.password || undefined,

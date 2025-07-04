@@ -22,7 +22,7 @@ const DOTab = () => {
 
   const fetchDelivery = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/delivery-order", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/delivery-order", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

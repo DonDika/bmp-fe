@@ -24,8 +24,8 @@ const EditShelfMod = ({ shelf, warehouseId, onClose, onShelfUpdated }) => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const [warehouseRes, itemRes] = await Promise.all([
-          axios.get("http://localhost:5001/api/warehouse/all", { headers }),
-          axios.get("http://localhost:5001/api/item/all", { headers }),
+          axios.get("${import.meta.env.VITE_API_URL}/warehouse/all", { headers }),
+          axios.get("${import.meta.env.VITE_API_URL}/item/all", { headers }),
         ]);
 
         if (warehouseRes.data.success) {
@@ -61,7 +61,7 @@ const EditShelfMod = ({ shelf, warehouseId, onClose, onShelfUpdated }) => {
       try {
         const headers = { Authorization: `Bearer ${token}` };
         const res = await axios.get(
-          `http://localhost:5001/api/shelf/warehouse/${warehouseId}`,
+          `${import.meta.env.VITE_API_URL}/shelf/warehouse/${warehouseId}`,
           { headers }
         );
 
@@ -112,7 +112,7 @@ const EditShelfMod = ({ shelf, warehouseId, onClose, onShelfUpdated }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5001/api/shelf/${shelf.id}`,
+        `${import.meta.env.VITE_API_URL}/shelf/${shelf.id}`,
         {
           position: shelfInfo.position,
           location: shelfInfo.location,

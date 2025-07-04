@@ -22,7 +22,7 @@ const ItemsPage = () => {
 
   const fetchItems = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/item/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/item/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +56,7 @@ const ItemsPage = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/item/${item.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/item/${item.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

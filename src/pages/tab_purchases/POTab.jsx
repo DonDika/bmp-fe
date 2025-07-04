@@ -25,7 +25,7 @@ const POTab = () => {
 
   const fetchPurchases = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/purchase-order/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/purchase-order/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ const POTab = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/purchase-order/${purchase.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/purchase-order/${purchase.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

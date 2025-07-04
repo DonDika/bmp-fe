@@ -22,7 +22,7 @@ const LocationsPage = () => {
 
   const fetchLocations = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/location/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/location/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +56,7 @@ const LocationsPage = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/location/${location.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/location/${location.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

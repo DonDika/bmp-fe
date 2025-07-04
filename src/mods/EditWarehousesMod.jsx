@@ -43,7 +43,7 @@ const EditWarehousesMod = ({ onClose, warehouse, onWarehouseUpdated }) => {
     try {
       const token = Cookies.get("token");
       const response = await axios.put(
-        `http://localhost:5001/api/warehouse/${warehouse.id}`,
+        `${import.meta.env.VITE_API_URL}/warehouse/${warehouse.id}`,
         {
           name: warehouseInfo.name,
           location: warehouseInfo.location,

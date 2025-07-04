@@ -23,7 +23,7 @@ const UsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/user/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/user/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ const handleDeleteUser = async (user) => {
 
   if (result.isConfirmed) {
     try {
-      const res = await axios.delete(`http://localhost:5001/api/user/${user.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/user/${user.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

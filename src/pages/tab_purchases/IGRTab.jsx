@@ -22,7 +22,7 @@ const IGRTab = () => {
 
   const fetchReceipts = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/incoming-good-receipt/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/incoming-good-receipt/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -27,7 +27,7 @@ const ViewPOMod = ({ onClose, id, token }) => {
   const fetchPORequest = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5001/api/purchase-order/${id}`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/purchase-order/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -46,7 +46,7 @@ const ViewPOMod = ({ onClose, id, token }) => {
 
   const fetchApprovalList = async () => {
     try {
-      const res = await axios.get(`http://localhost:5001/api/purchase-order/${id}/approval/list`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/purchase-order/${id}/approval/list`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -94,7 +94,7 @@ const ViewPOMod = ({ onClose, id, token }) => {
       }
 
       const res = await axios.post(
-        `http://localhost:5001/api/purchase-order/${id}/approve`,
+        `${import.meta.env.VITE_API_URL}/purchase-order/${id}/approve`,
         {},
         {
           headers: { Authorization: `Bearer ${cookieToken}` },

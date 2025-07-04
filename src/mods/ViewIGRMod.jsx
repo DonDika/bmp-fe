@@ -11,7 +11,7 @@ const ViewIGRMod = ({ onClose, id, token }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/incoming-good-receipt/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/incoming-good-receipt/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -37,7 +37,7 @@ const ViewIGRMod = ({ onClose, id, token }) => {
     try {
       setUpdatingStatus(true);
       await axios.patch(
-        `http://localhost:5001/api/incoming-good-receipt/${itemId}/status`,
+        `${import.meta.env.VITE_API_URL}/incoming-good-receipt/${itemId}/status`,
         { status: "received" },
         {
           headers: {
@@ -46,7 +46,7 @@ const ViewIGRMod = ({ onClose, id, token }) => {
         }
       );
       // Refresh data setelah update
-      const res = await axios.get(`http://localhost:5001/api/incoming-good-receipt/${id}`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/incoming-good-receipt/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.success) {

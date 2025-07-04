@@ -35,10 +35,10 @@ const AddPOMod = ({ onClose, onPurchaseAdded }) => {
       try {
         setLoading(true);
         const [mrRes, userRes] = await Promise.all([
-          axios.get("http://localhost:5001/api/material-request/all", {
+          axios.get("${import.meta.env.VITE_API_URL}/material-request/all", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          // axios.get("http://localhost:5001/api/user/all", {
+          // axios.get("${import.meta.env.VITE_API_URL}/user/all", {
           //   headers: { Authorization: `Bearer ${token}` },
           // }),
         ]);
@@ -98,7 +98,7 @@ const AddPOMod = ({ onClose, onPurchaseAdded }) => {
   const fetchMaterialRequestItems = async (materialRequestId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/material-request/${materialRequestId}`,
+        `${import.meta.env.VITE_API_URL}/material-request/${materialRequestId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -275,7 +275,7 @@ const AddPOMod = ({ onClose, onPurchaseAdded }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/purchase-order",
+        "${import.meta.env.VITE_API_URL}/purchase-order",
         dataToSubmit,
         {
           headers: { Authorization: `Bearer ${token}` },

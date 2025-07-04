@@ -36,7 +36,7 @@ const AddWarehouseMod = ({ onClose, onWarehouseAdded }) => {
       const token = Cookies.get("token");
 
       const response = await axios.post(
-        "http://localhost:5001/api/warehouse",
+        "${import.meta.env.VITE_API_URL}/warehouse",
         {
           name: warehouseInfo.name,
           location: warehouseInfo.location,

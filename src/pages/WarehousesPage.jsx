@@ -23,7 +23,7 @@ const WarehousesPage = () => {
 
   const fetchWarehouse = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/warehouse/all", {
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/warehouse/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -57,7 +57,7 @@ const WarehousesPage = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/warehouse/${warehouse.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/warehouse/${warehouse.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

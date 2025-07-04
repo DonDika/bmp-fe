@@ -14,7 +14,7 @@ const EditPOMod = ({ purchaseData, onClose, onPurchaseUpdated }) => {
     const fetchStatus = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5001/api/purchase-order/${purchaseData.id}`,
+          `${import.meta.env.VITE_API_URL}/purchase-order/${purchaseData.id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -39,7 +39,7 @@ const EditPOMod = ({ purchaseData, onClose, onPurchaseUpdated }) => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5001/api/purchase-order/${purchaseData.id}`,
+        `${import.meta.env.VITE_API_URL}/purchase-order/${purchaseData.id}`,
         { status },
         {
           headers: { Authorization: `Bearer ${token}` },

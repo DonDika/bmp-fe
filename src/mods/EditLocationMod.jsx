@@ -40,7 +40,7 @@ const EditLocationMod = ({ onClose, location, onLocationUpdated }) => {
     try {
       const token = Cookies.get("token");
       const response = await axios.put(
-        `http://localhost:5001/api/location/${location.id}`,
+        `${import.meta.env.VITE_API_URL}/location/${location.id}`,
         {
           name: locationInfo.name,
           // code: locationInfo.code,

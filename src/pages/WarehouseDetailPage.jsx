@@ -32,7 +32,7 @@ const ShelfDetailPage = () => {
 
   const fetchShelfs = async () => {
     try {
-      const res = await axios.get(`http://localhost:5001/api/shelf/warehouse/${warehouseID}`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/shelf/warehouse/${warehouseID}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -72,7 +72,7 @@ const ShelfDetailPage = () => {
     if (!confirmDelete) return;
   
     try {
-      const res = await axios.delete(`http://localhost:5001/api/shelf/${shelf.id}`, {
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/shelf/${shelf.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

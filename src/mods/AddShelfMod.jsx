@@ -26,8 +26,8 @@ const AddShelfMod = ({ onClose, onShelfAdded }) => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const [warehouseRes, itemRes] = await Promise.all([
-          axios.get("http://localhost:5001/api/warehouse/all", { headers }),
-          axios.get("http://localhost:5001/api/item/all", { headers }),
+          axios.get("${import.meta.env.VITE_API_URL}/warehouse/all", { headers }),
+          axios.get("${import.meta.env.VITE_API_URL}/item/all", { headers }),
         ]);
 
         if (warehouseRes.data.success) {
@@ -76,7 +76,7 @@ const AddShelfMod = ({ onClose, onShelfAdded }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/shelf",
+        "${import.meta.env.VITE_API_URL}/shelf",
         shelfInfo,
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -20,7 +20,7 @@ const AuthVerifyToken = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:5001/api/user/claim', {
+        const response = await axios.get('${import.meta.env.VITE_API_URL}/user/claim', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -43,7 +43,7 @@ const EditItemMod = ({ onClose, item, onItemUpdated }) => {
     try {
       const token = Cookies.get("token");
       const response = await axios.put(
-        `http://localhost:5001/api/item/${item.id}`,
+        `${import.meta.env.VITE_API_URL}/item/${item.id}`,
         {
           name: itemInfo.name,
           code: itemInfo.code,

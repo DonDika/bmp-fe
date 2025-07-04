@@ -20,7 +20,7 @@ const EditMPRMod = ({ purchase, onClose, onPurchaseUpdated }) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const itemsRes = await axios.get("http://localhost:5001/api/item/all", {
+        const itemsRes = await axios.get("${import.meta.env.VITE_API_URL}/item/all", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (itemsRes.data.success) setItemsData(itemsRes.data.data);
@@ -37,7 +37,7 @@ const EditMPRMod = ({ purchase, onClose, onPurchaseUpdated }) => {
       if (!purchase?.id) return;
       try {
         const res = await axios.get(
-          `http://localhost:5001/api/material-request/${purchase.id}`,
+          `${import.meta.env.VITE_API_URL}/material-request/${purchase.id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -105,7 +105,7 @@ const EditMPRMod = ({ purchase, onClose, onPurchaseUpdated }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5001/api/material-request/${purchase.id}`,
+        `${import.meta.env.VITE_API_URL}/material-request/${purchase.id}`,
         payload,
         {
           headers: { Authorization: `Bearer ${token}` },
